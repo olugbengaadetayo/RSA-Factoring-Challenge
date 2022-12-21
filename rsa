@@ -23,16 +23,17 @@ check_factor()
 	num=$(echo "$1" | tr ':' '=')
 
 	result=$(echo "if($num2 > $num1) 1 else 0" | bc)
-		if ((result == 1)); then
-			numcp=$num1
-			num1=$num2
-			num2=$numcp
+		if ((result == 1));
+		then
+			numcp = $num1
+			num1 = $num2
+			num2 = $numcp
 		fi
 
 	echo "$num$num1*$num2"
 }
 
-if [ $# -ne 1 ]
+if [$# -ne 1]
 then
 	echo 'Usage: rsa <file>'
 	exit 1
